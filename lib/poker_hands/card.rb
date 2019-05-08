@@ -4,7 +4,7 @@ class Card
     @suit = suit
   end
 
-  def get_card
+  def to_s
     @rank + @suit
   end
 end
