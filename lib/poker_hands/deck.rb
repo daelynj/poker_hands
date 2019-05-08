@@ -20,7 +20,7 @@ class Deck
   def deal
     [].tap do |hand|
       @hand_size.times do
-        hand << @deck.shift.to_s
+        hand << @deck.shift
       end
     end
   end
