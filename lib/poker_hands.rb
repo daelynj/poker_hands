@@ -9,5 +9,3 @@ module PokerHands
     end
   end
 end
-
-PokerHands::play_game
