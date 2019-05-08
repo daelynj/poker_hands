@@ -1,6 +1,11 @@
-require "poker_hands/version"
+require_relative 'poker_hands/version'
+require_relative 'poker_hands/game'
+require_relative 'poker_hands/deck'
 
 module PokerHands
-  class Error < StandardError; end
-  # Your code goes here...
+  class << self
+    def play_game
+      Game.new
+    end
+  end
 end
