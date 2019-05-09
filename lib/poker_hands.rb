@@ -1,11 +1,11 @@
 require_relative 'poker_hands/version'
 require_relative 'poker_hands/game'
-require_relative 'poker_hands/deck'
 
 module PokerHands
   class << self
     def play_game
-      Game.new
+      game = Game.new
+      puts game.determine_winner
     end
   end
 end
