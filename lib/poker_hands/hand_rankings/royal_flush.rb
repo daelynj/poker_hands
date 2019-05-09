@@ -1,7 +1,6 @@
 class RoyalFlush
   def check(hand)
     royal_flush_ranks = ['A', 'K', 'Q', 'J', '10']
-    ranks_in_hand = []
     
     return false if hand.any? { |card| card.suit != hand.first.suit}
 
