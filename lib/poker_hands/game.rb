@@ -1,5 +1,5 @@
 require_relative 'deck'
-require_relative 'CompareHands'
+require_relative 'compare_hands'
 
 class Game
   def initialize
