@@ -1,41 +1,52 @@
+require_relative 'hand_rankings/royal_flush'
+require_relative 'hand_rankings/straight_flush'
+require_relative 'hand_rankings/four_of_a_kind'
+require_relative 'hand_rankings/full_house'
+require_relative 'hand_rankings/flush'
+require_relative 'hand_rankings/straight'
+require_relative 'hand_rankings/three_of_a_kind'
+require_relative 'hand_rankings/two_pair'
+require_relative 'hand_rankings/pair'
+require_relative 'hand_rankings/high_card'
+
 class Value
   def royal_flush?(hand)
-    true
+    RoyalFlush.new.check(hand)
   end
 
   def straight_flush?(hand)
-    true
+    StraightFlush.new.check(hand)
   end
 
   def four_of_a_kind?(hand)
-    true
+    FourOfAKind.new.check(hand)
   end
 
   def full_house?(hand)
-    true
+    FullHouse.new.check(hand)
   end
 
   def flush?(hand)
-    true
+    Flush.new.check(hand)
   end
 
   def straight?(hand)
-    true
+    Straight.new.check(hand)
   end
 
   def three_of_a_kind?(hand)
-    true
+    ThreeOfAKind.new.check(hand)
   end
 
   def two_pair?(hand)
-    true
+    TwoPair.new.check(hand)
   end
 
   def pair?(hand)
-    true
+    Pair.new.check(hand)
   end
 
   def high_card?(hand)
-    true
+    HighCard.new.check(hand)
   end
 end
