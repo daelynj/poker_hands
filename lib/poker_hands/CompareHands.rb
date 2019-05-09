@@ -21,10 +21,10 @@ class CompareHands
               Value.new.pair?(hand),
               Value.new.high_card?(hand)
             ]
-    value.max
+    value.index(true)
   end
   
   def winner(h1_val, h2_val)
-    h1_val > h2_val ? 'h1' : 'h2'
+    h1_val < h2_val ? 'h1' : 'h2'
   end
 end
