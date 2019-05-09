@@ -1,41 +1,41 @@
 class Value
   def royal_flush?(hand)
-    10
+    true
   end
 
   def straight_flush?(hand)
-    9
+    true
   end
 
   def four_of_a_kind?(hand)
-    8
+    true
   end
 
   def full_house?(hand)
-    7
+    true
   end
 
   def flush?(hand)
-    6
+    true
   end
 
   def straight?(hand)
-    5
+    true
   end
 
   def three_of_a_kind?(hand)
-    4
+    true
   end
 
   def two_pair?(hand)
-    3
+    true
   end
 
   def pair?(hand)
-    2
+    true
   end
 
   def high_card?(hand)
-    1
+    true
   end
 end
