@@ -10,6 +10,6 @@ class Game
   end
 
   def determine_winner
-    CompareHands.new.call(@hand1, @hand2) ? 'Hand 1 wins' : 'Hand 2 wins'
+    CompareHands.new.call(@hand1, @hand2) == 'h1' ? 'Hand 1 wins' : 'Hand 2 wins'
   end
 end
