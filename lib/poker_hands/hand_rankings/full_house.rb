@@ -1,5 +1,5 @@
 class FullHouse
   def check(hand)
-    7
+    true
   end
 end

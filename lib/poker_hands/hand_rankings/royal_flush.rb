@@ -1,5 +1,5 @@
 class RoyalFlush
   def check(hand)
-    10
+    true
   end
 end

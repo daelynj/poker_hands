@@ -1,5 +1,5 @@
 class Straight
   def check(hand)
-    5
+    true
   end
 end

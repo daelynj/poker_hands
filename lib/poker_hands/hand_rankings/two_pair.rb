@@ -1,5 +1,5 @@
 class TwoPair
   def check(hand)
-    3
+    true
   end
 end
