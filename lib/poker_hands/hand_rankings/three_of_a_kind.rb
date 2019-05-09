@@ -1,5 +1,5 @@
 class ThreeOfAKind
   def check(hand)
-    4
+    true
   end
 end

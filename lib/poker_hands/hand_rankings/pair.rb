@@ -1,5 +1,5 @@
 class Pair
   def check(hand)
-    2
+    true
   end
 end

@@ -1,5 +1,5 @@
 class HighCard
   def check(hand)
-    1
+    true
   end
 end
