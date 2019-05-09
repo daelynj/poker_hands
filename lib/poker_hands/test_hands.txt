@@ -1,0 +1,1 @@
+royal_flush = [Card.new('A', 'D'), Card.new('K', 'D'), Card.new('Q', 'D'), Card.new('J', 'D'), Card.new('10', 'D')]
