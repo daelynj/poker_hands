@@ -2,7 +2,7 @@ require_relative 'card'
 
 class Deck
   def initialize
-    @ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    @ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14']
     @suits = ['C', 'H', 'S', 'D']
     @cards = []
 
