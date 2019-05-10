@@ -9,6 +9,6 @@ class RoyalFlush
     #  ranks_in_hand << card.rank
     #end
 
-    (royal_flush_ranks - ranks_in_hand).empty? ? true : false
+    (royal_flush_ranks - ranks_in_hand).empty?
   end
 end
