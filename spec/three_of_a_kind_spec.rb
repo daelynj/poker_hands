@@ -16,6 +16,20 @@ RSpec.describe ThreeOfAKind do
       it { is_expected.to be true }
     end
 
+    context 'when hand is a FourOfAKind' do
+      let(:hand) do
+        [
+          Card.new('11', 'H'),
+          Card.new('11', 'D'),
+          Card.new('11', 'S'),
+          Card.new('11', 'C'),
+          Card.new('7', 'D')
+        ]
+      end
+
+      it { is_expected.to be true }
+    end
+
     context 'when hand is not a ThreeOfAKind' do
       let(:hand) do
         [
