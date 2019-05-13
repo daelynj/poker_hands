@@ -16,6 +16,20 @@ RSpec.describe TwoPair do
       it { is_expected.to be true }
     end
 
+    context 'when hand is a Pair' do
+      let(:hand) do
+        [
+          Card.new('4', 'C'),
+          Card.new('4', 'S'),
+          Card.new('5', 'C'),
+          Card.new('6', 'D'),
+          Card.new('12', 'C')
+        ]
+      end
+
+      it { is_expected.to be false }
+    end
+
     context 'when hand is not a TwoPair' do
       let(:hand) do
         [
