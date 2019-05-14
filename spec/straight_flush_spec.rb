@@ -1,5 +1,5 @@
 RSpec.describe StraightFlush do
-  describe '.check' do
+  describe '#check' do
     subject { StraightFlush.new.check(hand) }
 
     context 'when hand is a StraightFlush' do

@@ -1,5 +1,5 @@
 RSpec.describe FullHouse do
-  describe '.check' do
+  describe '#check' do
     subject { FullHouse.new.check(hand) }
 
     context 'when hand is a FullHouse' do

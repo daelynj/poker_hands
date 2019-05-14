@@ -2,7 +2,7 @@ require_relative '../lib/poker_hands/hand_rankings/royal_flush'
 require_relative '../lib/poker_hands/card'
 
 RSpec.describe PokerHands::RoyalFlush do
-  describe '.check' do
+  describe '#check' do
     subject { PokerHands::RoyalFlush.new.check(hand) }
 
     context 'when hand is a RoyalFlush' do

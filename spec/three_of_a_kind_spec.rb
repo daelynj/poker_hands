@@ -1,5 +1,5 @@
 RSpec.describe ThreeOfAKind do
-  describe '.check' do
+  describe '#check' do
     subject { ThreeOfAKind.new.check(hand) }
 
     context 'when hand is a ThreeOfAKind' do

@@ -1,5 +1,5 @@
 RSpec.describe Pair do
-  describe '.check' do
+  describe '#check' do
     subject { Pair.new.check(hand) }
 
     context 'when hand is a Pair' do

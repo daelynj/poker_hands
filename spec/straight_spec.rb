@@ -1,5 +1,5 @@
 RSpec.describe Straight do
-  describe '.check' do
+  describe '#check' do
     subject { Straight.new.check(hand) }
 
     context 'when hand is a Straight' do

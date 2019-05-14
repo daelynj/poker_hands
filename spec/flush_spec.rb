@@ -1,5 +1,5 @@
 RSpec.describe Flush do
-  describe '.check' do
+  describe '#check' do
     subject { Flush.new.check(hand) }
 
     context 'when hand is a Flush' do
