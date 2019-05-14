@@ -1,5 +1,5 @@
 RSpec.describe FourOfAKind do
-  describe '.check' do
+  describe '#check' do
     subject { FourOfAKind.new.check(hand) }
 
     context 'when hand is a FourOfAKind' do
