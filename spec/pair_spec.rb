@@ -1,15 +1,18 @@
-RSpec.describe Pair do
+require_relative '../lib/poker_hands/hand_rankings/pair'
+require_relative '../lib/poker_hands/card'
+
+RSpec.describe PokerHands::Pair do
   describe '.check' do
-    subject { Pair.new.check(hand) }
+    subject { PokerHands::Pair.new.check(hand) }
 
     context 'when hand is a Pair' do
       let(:hand) do
         [
-          Card.new('14', 'H'),
-          Card.new('14', 'D'),
-          Card.new('8', 'C'),
-          Card.new('4', 'S'),
-          Card.new('7', 'H')
+          PokerHands::Card.new('14', 'H'),
+          PokerHands::Card.new('14', 'D'),
+          PokerHands::Card.new('8', 'C'),
+          PokerHands::Card.new('4', 'S'),
+          PokerHands::Card.new('7', 'H')
         ]
       end
 
@@ -19,11 +22,11 @@ RSpec.describe Pair do
     context 'when hand is a TwoPair' do
       let(:hand) do
         [
-          Card.new('4', 'C'),
-          Card.new('4', 'S'),
-          Card.new('3', 'C'),
-          Card.new('3', 'D'),
-          Card.new('12', 'C')
+          PokerHands::Card.new('4', 'C'),
+          PokerHands::Card.new('4', 'S'),
+          PokerHands::Card.new('3', 'C'),
+          PokerHands::Card.new('3', 'D'),
+          PokerHands::Card.new('12', 'C')
         ]
       end
 
@@ -33,11 +36,11 @@ RSpec.describe Pair do
     context 'when hand is not a Pair' do
       let(:hand) do
         [
-          Card.new('4', 'S'), 
-          Card.new('11', 'S'),
-          Card.new('8', 'S'),
-          Card.new('2', 'S'),
-          Card.new('9', 'S')
+          PokerHands::Card.new('4', 'S'), 
+          PokerHands::Card.new('11', 'S'),
+          PokerHands::Card.new('8', 'S'),
+          PokerHands::Card.new('2', 'S'),
+          PokerHands::Card.new('9', 'S')
         ]
       end
 

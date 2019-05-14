@@ -1,15 +1,18 @@
-RSpec.describe Straight do
+require_relative '../lib/poker_hands/hand_rankings/straight'
+require_relative '../lib/poker_hands/card'
+
+RSpec.describe PokerHands::Straight do
   describe '.check' do
-    subject { Straight.new.check(hand) }
+    subject { PokerHands::Straight.new.check(hand) }
 
     context 'when hand is a Straight' do
       let(:hand) do
         [
-          Card.new('9', 'C'),
-          Card.new('8', 'D'),
-          Card.new('7', 'S'),
-          Card.new('6', 'D'),
-          Card.new('5', 'H')
+          PokerHands::Card.new('9', 'C'),
+          PokerHands::Card.new('8', 'D'),
+          PokerHands::Card.new('7', 'S'),
+          PokerHands::Card.new('6', 'D'),
+          PokerHands::Card.new('5', 'H')
         ]
       end
 
@@ -19,11 +22,11 @@ RSpec.describe Straight do
     context 'when hand is not a Straight' do
       let(:hand) do
         [
-          Card.new('7', 'C'),
-          Card.new('7', 'D'),
-          Card.new('7', 'S'),
-          Card.new('13', 'C'),
-          Card.new('3', 'D')
+          PokerHands::Card.new('7', 'C'),
+          PokerHands::Card.new('7', 'D'),
+          PokerHands::Card.new('7', 'S'),
+          PokerHands::Card.new('13', 'C'),
+          PokerHands::Card.new('3', 'D')
         ]
       end
 

@@ -1,15 +1,18 @@
-RSpec.describe ThreeOfAKind do
+require_relative '../lib/poker_hands/hand_rankings/three_of_a_kind'
+require_relative '../lib/poker_hands/card'
+
+RSpec.describe PokerHands::ThreeOfAKind do
   describe '.check' do
-    subject { ThreeOfAKind.new.check(hand) }
+    subject { PokerHands::ThreeOfAKind.new.check(hand) }
 
     context 'when hand is a ThreeOfAKind' do
       let(:hand) do
         [
-          Card.new('7', 'C'),
-          Card.new('7', 'D'),
-          Card.new('7', 'S'),
-          Card.new('13', 'C'),
-          Card.new('3', 'D')
+          PokerHands::Card.new('7', 'C'),
+          PokerHands::Card.new('7', 'D'),
+          PokerHands::Card.new('7', 'S'),
+          PokerHands::Card.new('13', 'C'),
+          PokerHands::Card.new('3', 'D')
         ]
       end
 
@@ -19,11 +22,11 @@ RSpec.describe ThreeOfAKind do
     context 'when hand is a FourOfAKind' do
       let(:hand) do
         [
-          Card.new('11', 'H'),
-          Card.new('11', 'D'),
-          Card.new('11', 'S'),
-          Card.new('11', 'C'),
-          Card.new('7', 'D')
+          PokerHands::Card.new('11', 'H'),
+          PokerHands::Card.new('11', 'D'),
+          PokerHands::Card.new('11', 'S'),
+          PokerHands::Card.new('11', 'C'),
+          PokerHands::Card.new('7', 'D')
         ]
       end
 
@@ -33,11 +36,11 @@ RSpec.describe ThreeOfAKind do
     context 'when hand is not a ThreeOfAKind' do
       let(:hand) do
         [
-          Card.new('4', 'S'), 
-          Card.new('11', 'S'),
-          Card.new('8', 'S'),
-          Card.new('2', 'S'),
-          Card.new('9', 'S')
+          PokerHands::Card.new('4', 'S'), 
+          PokerHands::Card.new('11', 'S'),
+          PokerHands::Card.new('8', 'S'),
+          PokerHands::Card.new('2', 'S'),
+          PokerHands::Card.new('9', 'S')
         ]
       end
 

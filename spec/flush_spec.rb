@@ -1,15 +1,18 @@
-RSpec.describe Flush do
+require_relative '../lib/poker_hands/hand_rankings/flush'
+require_relative '../lib/poker_hands/card'
+
+RSpec.describe PokerHands::Flush do
   describe '.check' do
-    subject { Flush.new.check(hand) }
+    subject { PokerHands::Flush.new.check(hand) }
 
     context 'when hand is a Flush' do
       let(:hand) do
         [
-          Card.new('4', 'S'),
-          Card.new('11', 'S'),
-          Card.new('8', 'S'),
-          Card.new('2', 'S'),
-          Card.new('9', 'S')
+          PokerHands::Card.new('4', 'S'),
+          PokerHands::Card.new('11', 'S'),
+          PokerHands::Card.new('8', 'S'),
+          PokerHands::Card.new('2', 'S'),
+          PokerHands::Card.new('9', 'S')
         ]
       end
 
@@ -19,11 +22,11 @@ RSpec.describe Flush do
     context 'when hand is a StraightFlush' do
       let(:hand) do
         [
-          Card.new('8', 'C'),
-          Card.new('7', 'C'),
-          Card.new('6', 'C'),
-          Card.new('5', 'C'),
-          Card.new('4', 'C')
+          PokerHands::Card.new('8', 'C'),
+          PokerHands::Card.new('7', 'C'),
+          PokerHands::Card.new('6', 'C'),
+          PokerHands::Card.new('5', 'C'),
+          PokerHands::Card.new('4', 'C')
         ]
       end
 
@@ -33,11 +36,11 @@ RSpec.describe Flush do
     context 'when hand is not a Flush' do
       let(:hand) do
         [
-          Card.new('7', 'C'),
-          Card.new('7', 'D'),
-          Card.new('7', 'S'),
-          Card.new('13', 'C'),
-          Card.new('3', 'D')
+          PokerHands::Card.new('7', 'C'),
+          PokerHands::Card.new('7', 'D'),
+          PokerHands::Card.new('7', 'S'),
+          PokerHands::Card.new('13', 'C'),
+          PokerHands::Card.new('3', 'D')
         ]
       end
 

@@ -1,15 +1,18 @@
-RSpec.describe StraightFlush do
+require_relative '../lib/poker_hands/hand_rankings/straight_flush'
+require_relative '../lib/poker_hands/card'
+
+RSpec.describe PokerHands::StraightFlush do
   describe '.check' do
-    subject { StraightFlush.new.check(hand) }
+    subject { PokerHands::StraightFlush.new.check(hand) }
 
     context 'when hand is a StraightFlush' do
       let(:hand) do
         [
-          Card.new('8', 'C'),
-          Card.new('7', 'C'),
-          Card.new('6', 'C'),
-          Card.new('5', 'C'),
-          Card.new('4', 'C')
+          PokerHands::Card.new('8', 'C'),
+          PokerHands::Card.new('7', 'C'),
+          PokerHands::Card.new('6', 'C'),
+          PokerHands::Card.new('5', 'C'),
+          PokerHands::Card.new('4', 'C')
         ]
       end
 
@@ -19,11 +22,11 @@ RSpec.describe StraightFlush do
     context 'when hand is not a StraightFlush' do
       let(:hand) do
         [
-          Card.new('7', 'C'),
-          Card.new('7', 'D'),
-          Card.new('7', 'S'),
-          Card.new('13', 'C'),
-          Card.new('3', 'D')
+          PokerHands::Card.new('7', 'C'),
+          PokerHands::Card.new('7', 'D'),
+          PokerHands::Card.new('7', 'S'),
+          PokerHands::Card.new('13', 'C'),
+          PokerHands::Card.new('3', 'D')
         ]
       end
 
