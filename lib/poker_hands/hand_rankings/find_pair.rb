@@ -8,9 +8,14 @@ module PokerHands
       if ranks_in_hand.uniq.count { |rank| ranks_in_hand.count(rank) > 1 } == 0
         return nil
       end
-      pair_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 2 }.uniq
-      pair = hand.select { |card| card.rank == pair_rank[0] }
-      other_cards = hand.select { |card| card.rank != pair_rank[0] }
+
+      pair_rank = ranks_in_hand.select do |rank|
+        ranks_in_hand.count(rank) == 2
+      end
+      pair_rank = pair_rank[0]
+
+      pair = hand.select { |card| card.rank == pair_rank }
+      other_cards = hand.select { |card| card.rank != pair_rank }
 
       Entities::Pair.new(pair: pair, other_cards: other_cards)
     end
