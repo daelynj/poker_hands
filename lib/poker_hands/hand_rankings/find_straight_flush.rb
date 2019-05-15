@@ -1,4 +1,4 @@
-require_relative 'FindFlush'
+require_relative 'find_flush'
 require_relative 'hand_entities/straight_flush'
 
 module PokerHands
@@ -8,7 +8,7 @@ module PokerHands
         return nil
       end
 
-      Entities::StraightFlush.new(hand)
+      Entities::StraightFlush.new(hand: hand)
     end
   end
 end
