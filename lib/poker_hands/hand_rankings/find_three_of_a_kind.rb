@@ -9,7 +9,7 @@ module PokerHands
         return nil
       end
 
-      toak_rank = ranks_in_hand.uniq { |rank| ranks_in_hand.count(rank) > 3 }
+      toak_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 3 }.uniq
       toak = hand.select { |card| card.rank == toak_rank[0] }
       other_cards = hand.select { |card| card.rank != toak_rank[0] }
       other_cards.sort_by! { |card| card.rank.to_i }
