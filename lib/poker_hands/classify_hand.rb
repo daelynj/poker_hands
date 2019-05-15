@@ -2,6 +2,7 @@ require_relative 'hand_rankings/find_two_pair'
 require_relative 'hand_rankings/find_pair'
 require_relative 'hand_rankings/find_high_card'
 require_relative 'hand_rankings/find_three_of_a_kind'
+require_relative 'hand_rankings/find_flush'
 require_relative 'hand_rankings/find_straight'
 
 module PokerHands
@@ -9,6 +10,7 @@ module PokerHands
     def call(hand)
       found_hands = 
       [
+        FindFlush.new.call(hand),
         FindStraight.new.call(hand),
         FindThreeOfAKind.new.call(hand),
         FindTwoPair.new.call(hand),
