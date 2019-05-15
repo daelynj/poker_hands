@@ -2,12 +2,14 @@ require_relative 'hand_rankings/find_two_pair'
 require_relative 'hand_rankings/find_pair'
 require_relative 'hand_rankings/find_high_card'
 require_relative 'hand_rankings/find_three_of_a_kind'
+require_relative 'hand_rankings/find_full_house'
 
 module PokerHands
   class ClassifyHand
     def call(hand)
       found_hands = 
       [
+        FindFullHouse.new.call(hand),
         FindThreeOfAKind.new.call(hand),
         FindTwoPair.new.call(hand),
         FindPair.new.call(hand),
