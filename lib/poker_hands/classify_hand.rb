@@ -3,6 +3,7 @@ require_relative 'hand_rankings/find_pair'
 require_relative 'hand_rankings/find_high_card'
 require_relative 'hand_rankings/find_three_of_a_kind'
 require_relative 'hand_rankings/find_royal_flush'
+require_relative 'hand_rankings/find_straight_flush'
 
 module PokerHands
   class ClassifyHand
@@ -10,6 +11,7 @@ module PokerHands
       found_hands = 
       [
         FindRoyalFlush.new.call(hand),
+        FindStraightFlush.new.call(hand),
         FindThreeOfAKind.new.call(hand),
         FindTwoPair.new.call(hand),
         FindPair.new.call(hand),
