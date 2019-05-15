@@ -6,6 +6,7 @@ require_relative 'hand_rankings/find_royal_flush'
 require_relative 'hand_rankings/find_straight_flush'
 require_relative 'hand_rankings/find_flush'
 require_relative 'hand_rankings/find_straight'
+require_relative 'hand_rankings/find_full_house'
 
 module PokerHands
   class ClassifyHand
@@ -16,6 +17,7 @@ module PokerHands
         FindStraightFlush.new.call(hand),
         FindFlush.new.call(hand),
         FindStraight.new.call(hand),
+        FindFullHouse.new.call(hand),
         FindThreeOfAKind.new.call(hand),
         FindTwoPair.new.call(hand),
         FindPair.new.call(hand),
