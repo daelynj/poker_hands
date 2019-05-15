@@ -4,7 +4,6 @@ module PokerHands
   class FindTwoPair
     def call(hand)
       ranks_in_hand = hand.map(&:rank)
-
       if ranks_in_hand.uniq.count { |rank| ranks_in_hand.count(rank) > 1 } < 2
         return nil
       end
