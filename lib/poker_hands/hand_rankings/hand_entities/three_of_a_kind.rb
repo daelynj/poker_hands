@@ -6,7 +6,7 @@ module PokerHands
 
       def initialize(set:, other_cards:)
         @set = set.map(&:rank)
-        @other_cards = other_cards.sort! { |card| card.rank }.map(&:rank)
+        @other_cards = other_cards.map(&:rank).sort.reverse
         @strength = 4
       end
 
