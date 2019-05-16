@@ -6,15 +6,17 @@ module PokerHands
 
       ranks_in_hand = hand.map(&:rank)
 
-      if !ranks_in_hand.uniq.any? { |rank| ranks_in_hand.count(rank) == 4}
+      if !ranks_in_hand.uniq.any? { |rank| ranks_in_hand.count(rank) == 4 }
         return nil
       end
 
-      foak_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 4 }.uniq
-      foak = hand.select { |card| card.rank == foak_rank[0] }
-      other_card = hand.select { |card| card.rank != foak_rank[0] }
+      quads_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 4 }
+      quads_rank = quads_rank[0]
 
-      Entities::FourOfAKind.new(foak: foak, other_card: other_card)
+      quads = hand.select { |card| card.rank == quads_rank }
+      other_card = hand.select { |card| card.rank != quads_rank }
+
+      Entities::FourOfAKind.new(quads: quads, other_card: other_card)
     end
   end
 end
