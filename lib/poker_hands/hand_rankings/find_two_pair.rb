@@ -10,9 +10,9 @@ module PokerHands
 
       pairs_ranks = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 2 }.uniq
       pairs = hand.select { |card| card.rank == pairs_ranks[0] || card.rank == pairs_ranks[1] }
-      other_cards = hand.select { |card| card.rank != pairs_ranks[0] && card.rank != pairs_ranks[1] }
+      other_card = hand.select { |card| card.rank != pairs_ranks[0] && card.rank != pairs_ranks[1] }
       
-      Entities::TwoPair.new(pairs: pairs, other_cards: other_cards)
+      Entities::TwoPair.new(pairs: pairs, other_card: other_card)
     end
   end
 end
