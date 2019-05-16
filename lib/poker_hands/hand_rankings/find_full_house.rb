@@ -5,21 +5,19 @@ require_relative 'hand_entities/full_house'
 module PokerHands
   class FindFullHouse
     def call(hand)
-      if FindThreeOfAKind.new.call(hand).nil?
+      if FindThreeOfAKind.new.call(hand).nil? || FindPair.new.call(hand).nil?
         return nil
       end
 
       ranks_in_hand = hand.map(&:rank)
-
-      if ranks_in_hand.uniq.count { |rank| ranks_in_hand.count(rank) == 2 } == 0
-        return nil
-      end
-
-      toak_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 3 }.uniq
-      toak = hand.select { |card| card.rank == toak_rank[0] }
-      pair = hand.select { |card| card.rank != toak_rank[0] }
       
-      Entities::FullHouse.new(toak: toak, pair: pair)
+      set_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 3 }
+      set_rank = set_rank[0]
+      
+      set = hand.select { |card| card.rank == set_rank }
+      pair = hand.select { |card| card.rank != set_rank }
+      
+      Entities::FullHouse.new(set: set, pair: pair)
     end
   end
 end
