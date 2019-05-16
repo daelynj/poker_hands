@@ -2,12 +2,22 @@ module PokerHands
   module Entities
     class TwoPair
       include Comparable
-      attr_reader :pairs, :other_cards, :strength
+      attr_reader :pairs, :other_card, :strength
 
-      def initialize(pairs:, other_cards:)
-        @pairs = pairs.map(&:rank)
-        @other_cards = other_cards.map(&:rank)
+      def initialize(pairs:, other_card:)
+        @pairs = pairs.sort! { |card| card.rank }.map(&:rank)
+        @other_card = other_card.map(&:rank)
         @strength = 3
+      end
+      
+      def <=>(other_hand)
+        if (@pairs <=> other_hand.pairs) != 0
+          return @pairs <=> other_hand.pairs
+        elsif (@other_card <=> other_hand.other_card) != 0
+          return @other_card <=> other_hand.other_card
+        else
+          return 'tie'
+        end
       end
     end
   end
