@@ -10,7 +10,10 @@ module PokerHands
       end
 
       ranks_in_hand = hand.map(&:rank)
-      #ranks_in_hand.uniq.count { |rank| ranks_in_hand.count(rank) == 2 } == 1
+
+      if ranks_in_hand.uniq.count { |rank| ranks_in_hand.count(rank) == 2 } == 0
+        return nil
+      end
 
       toak_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 3 }.uniq
       toak = hand.select { |card| card.rank == toak_rank[0] }
