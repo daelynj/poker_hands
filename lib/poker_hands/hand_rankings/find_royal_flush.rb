@@ -1,11 +1,12 @@
 require_relative 'hand_entities/royal_flush'
+require_relative 'find_flush'
 
 module PokerHands
   class FindRoyalFlush
     def call(hand)
       royal_flush_ranks = ['10', '11', '12', '13', '14']
       
-      if hand.any? { |card| card.suit != hand.first.suit}
+      if FindFlush.new.call(hand).nil?
         return nil
       end
 
@@ -15,7 +16,7 @@ module PokerHands
         return nil
       end
 
-      Entities::RoyalFlush.new(hand: hand)
+      Entities::RoyalFlush.new(cards: hand)
     end
   end
 end
