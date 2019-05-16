@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class Flush
       include Comparable
-      attr_reader :flush, :strength
+      attr_reader :flush, :strength, :type
 
       def initialize(flush:)
+        @type = 'flush'
         @flush = flush.map(&:rank).sort.reverse
         @strength = 6
       end

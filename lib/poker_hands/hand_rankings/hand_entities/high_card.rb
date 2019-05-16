@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class HighCard
       include Comparable
-      attr_reader :cards, :strength
+      attr_reader :cards, :strength, :type
 
       def initialize(cards:)
+        @type = 'high card'
         @cards = cards.map(&:rank).sort.reverse
         @strength = 1
       end

@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class RoyalFlush
       include Comparable
-      attr_reader :cards, :strength
+      attr_reader :cards, :strength, :type
 
       def initialize(cards:)
+        @type = 'royal flush'
         @cards = cards.map(&:rank)
         @strength = 10
       end

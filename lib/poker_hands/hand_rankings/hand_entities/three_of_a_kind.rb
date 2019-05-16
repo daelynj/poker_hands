@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class ThreeOfAKind
       include Comparable
-      attr_reader :set, :other_cards, :strength
+      attr_reader :set, :other_cards, :strength, :type
 
       def initialize(set:, other_cards:)
+        @type = 'three of a kind'
         @set = set.map(&:rank)
         @other_cards = other_cards.map(&:rank).sort.reverse
         @strength = 4

@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class FourOfAKind
       include Comparable
-      attr_reader :quads, :other_card, :strength
+      attr_reader :quads, :other_card, :strength, :type
 
       def initialize(quads:, other_card:)
+        @type = 'four of a kind'
         @quads = quads.map(&:rank).uniq
         @other_card = other_card.map(&:rank)
         @strength = 8
