@@ -9,12 +9,12 @@ module PokerHands
         return nil
       end
 
-      toak_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 3 }.uniq
-      toak = hand.select { |card| card.rank == toak_rank[0] }
-      other_cards = hand.select { |card| card.rank != toak_rank[0] }
-      other_cards.sort_by! { |card| card.rank.to_i }
+      set_rank = ranks_in_hand.select { |rank| ranks_in_hand.count(rank) == 3 }.uniq
+      set_rank = set_rank[0]
+      set = hand.select { |card| card.rank == set_rank }
+      other_cards = hand.select { |card| card.rank != set_rank }
       
-      Entities::ThreeOfAKind.new(toak: toak, other_cards: other_cards)
+      Entities::ThreeOfAKind.new(set: set, other_cards: other_cards)
     end
   end
 end
