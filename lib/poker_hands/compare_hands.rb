@@ -9,14 +9,16 @@ module PokerHands
       hand1 = ClassifyHand.new.call(@hand1)
       hand2 = ClassifyHand.new.call(@hand2)
 
+      @hand_types = "Hand 1 is a #{hand1.type}. Hand 2 is a #{hand2.type}."
+      
       determine_winner(hand1, hand2)
     end
 
     def determine_winner(hand1, hand2)
       if hand1.strength > hand2.strength
-        return 'hand 1 wins'
+        return "#{@hand_types} Hand 1 wins"
       elsif hand1.strength < hand2.strength
-        return 'hand 2 wins'
+        return "#{@hand_types} Hand 2 wins"
       else
         return tie(hand1, hand2)
       end
@@ -24,11 +26,11 @@ module PokerHands
 
     def tie(hand1, hand2)
       if (hand1 <=> hand2) == 1
-        return 'hand 1 wins'
+        return "#{@hand_types} Hand 1 wins"
       elsif (hand1 <=> hand2) == -1
-        return 'hand 2 wins'
+        return "#{@hand_types} Hand 2 wins"
       else
-        return 'tie'
+        return "#{@hand_types} Tie"
       end
     end
   end

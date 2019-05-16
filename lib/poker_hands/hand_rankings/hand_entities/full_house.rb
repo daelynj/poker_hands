@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class FullHouse
       include Comparable
-      attr_reader :set, :pair, :strength
+      attr_reader :set, :pair, :strength, :type
 
       def initialize(set:, pair:)
+        @type = 'full house'
         @set = set.map(&:rank)
         @pair = pair.map(&:rank)
         @strength = 7

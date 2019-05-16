@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class StraightFlush
       include Comparable
-      attr_reader :cards, :strength
+      attr_reader :cards, :strength, :type
 
       def initialize(cards:)
+        @type = 'straight flush'
         @cards = cards.map(&:rank).reverse
         @strength = 9
       end

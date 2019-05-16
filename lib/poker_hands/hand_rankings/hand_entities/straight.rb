@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class Straight
       include Comparable
-      attr_reader :straight, :strength
+      attr_reader :straight, :strength, :type
 
       def initialize(straight:)
+        @type = 'straight'
         @straight = straight.map(&:rank).reverse
         @strength = 5
       end

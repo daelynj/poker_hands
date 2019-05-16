@@ -2,9 +2,10 @@ module PokerHands
   module Entities
     class TwoPair
       include Comparable
-      attr_reader :pairs, :other_card, :strength
+      attr_reader :pairs, :other_card, :strength, :type
 
       def initialize(pairs:, other_card:)
+        @type = 'two pair'
         @pairs = pairs.map(&:rank).sort.reverse
         @other_card = other_card.map(&:rank)
         @strength = 3
