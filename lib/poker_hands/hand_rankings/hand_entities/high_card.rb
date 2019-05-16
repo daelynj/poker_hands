@@ -5,7 +5,7 @@ module PokerHands
       attr_reader :cards, :strength
 
       def initialize(cards:)
-        @cards = cards.sort! { |card| card.rank }.map(&:rank)
+        @cards = cards.map(&:rank).sort.reverse
         @strength = 1
       end
 

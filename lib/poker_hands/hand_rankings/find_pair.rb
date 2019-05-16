@@ -5,10 +5,10 @@ module PokerHands
     def call(hand)
       ranks_in_hand = hand.map(&:rank)
 
-      if ranks_in_hand.uniq.count { |rank| ranks_in_hand.count(rank) > 1 } == 0
+      if ranks_in_hand.uniq.count { |rank| ranks_in_hand.count(rank) == 2 } == 0
         return nil
       end
-
+      
       pair_rank = ranks_in_hand.select do |rank|
         ranks_in_hand.count(rank) == 2
       end
