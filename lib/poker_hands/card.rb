@@ -10,7 +10,7 @@ module PokerHands
     end
 
     def to_s
-      @rank + @suit
+      @rank.to_s + @suit
     end
   end
 end
