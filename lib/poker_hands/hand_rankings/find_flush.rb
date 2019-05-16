@@ -6,7 +6,7 @@ module PokerHands
       if !hand.all? { |card| card.suit == hand.first.suit}
         return nil
       end
-
+      
       Entities::Flush.new(flush: hand)
     end
   end
