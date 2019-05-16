@@ -7,7 +7,8 @@ module PokerHands
       if FindFlush.new.call(hand).nil? || FindStraight.new.call(hand).nil?
         return nil
       end
-      Entities::StraightFlush.new(hand: hand)
+
+      Entities::StraightFlush.new(cards: hand)
     end
   end
 end
