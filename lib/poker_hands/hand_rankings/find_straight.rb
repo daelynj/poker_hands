@@ -1,4 +1,4 @@
-require_relative 'hand_entities/straight'
+require 'poker_hands/hand_rankings/hand_entities/straight'
 
 module PokerHands
   class FindStraight

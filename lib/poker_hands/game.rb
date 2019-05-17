@@ -1,5 +1,5 @@
-require_relative 'deck'
-require_relative 'compare_hands'
+require 'poker_hands/deck'
+require 'poker_hands/compare_hands'
 
 module PokerHands
   class Game

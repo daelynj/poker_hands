@@ -1,4 +1,4 @@
-require_relative 'classify_hand'
+require 'poker_hands/classify_hand'
 
 module PokerHands
   class CompareHands

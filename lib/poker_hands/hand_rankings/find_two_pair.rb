@@ -1,4 +1,4 @@
-require_relative 'hand_entities/two_pair'
+require 'poker_hands/hand_rankings/hand_entities/two_pair'
 
 module PokerHands
   class FindTwoPair

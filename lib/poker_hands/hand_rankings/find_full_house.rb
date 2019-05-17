@@ -1,6 +1,6 @@
-require_relative 'find_pair'
-require_relative 'find_three_of_a_kind'
-require_relative 'hand_entities/full_house'
+require 'poker_hands/hand_rankings/find_pair'
+require 'poker_hands/hand_rankings/find_three_of_a_kind'
+require 'poker_hands/hand_rankings/hand_entities/full_house'
 
 module PokerHands
   class FindFullHouse

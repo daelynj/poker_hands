@@ -1,4 +1,4 @@
-require_relative 'hand_entities/high_card'
+require 'poker_hands/hand_rankings/hand_entities/high_card'
 
 module PokerHands
   class FindHighCard

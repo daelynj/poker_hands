@@ -1,13 +1,13 @@
-require_relative 'hand_rankings/find_two_pair'
-require_relative 'hand_rankings/find_pair'
-require_relative 'hand_rankings/find_high_card'
-require_relative 'hand_rankings/find_three_of_a_kind'
-require_relative 'hand_rankings/find_royal_flush'
-require_relative 'hand_rankings/find_straight_flush'
-require_relative 'hand_rankings/find_flush'
-require_relative 'hand_rankings/find_straight'
-require_relative 'hand_rankings/find_full_house'
-require_relative 'hand_rankings/find_four_of_a_kind'
+require 'poker_hands/hand_rankings/find_two_pair'
+require 'poker_hands/hand_rankings/find_pair'
+require 'poker_hands/hand_rankings/find_high_card'
+require 'poker_hands/hand_rankings/find_three_of_a_kind'
+require 'poker_hands/hand_rankings/find_royal_flush'
+require 'poker_hands/hand_rankings/find_straight_flush'
+require 'poker_hands/hand_rankings/find_flush'
+require 'poker_hands/hand_rankings/find_straight'
+require 'poker_hands/hand_rankings/find_full_house'
+require 'poker_hands/hand_rankings/find_four_of_a_kind'
 
 module PokerHands
   class ClassifyHand

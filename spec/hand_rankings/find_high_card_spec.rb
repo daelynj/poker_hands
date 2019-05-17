@@ -1,6 +1,6 @@
-require_relative '../../lib/poker_hands/hand_rankings/find_high_card'
-require_relative '../../lib/poker_hands/card'
-require 'pry'
+require 'poker_hands/hand_rankings/find_high_card'
+require 'poker_hands/card'
+require 'spec_helper'
 
 RSpec.describe PokerHands::FindHighCard do
   describe '#call' do

@@ -1,6 +1,6 @@
-require_relative '../../lib/poker_hands/hand_rankings/find_pair'
-require_relative '../../lib/poker_hands/card'
-require 'pry'
+require 'poker_hands/hand_rankings/find_pair'
+require 'poker_hands/card'
+require 'spec_helper'
 
 RSpec.describe PokerHands::FindPair do
   describe '#call' do
