@@ -12,7 +12,7 @@ module PokerHands
       pairs = hand.select { |card| card.rank == pairs_ranks[0] || card.rank == pairs_ranks[1] }
       other_card = hand.select { |card| card.rank != pairs_ranks[0] && card.rank != pairs_ranks[1] }
       
-      Entities::TwoPair.new(pairs: pairs, other_card: other_card)
+      Entities::TwoPair.new(cards: hand, pairs: pairs, other_card: other_card)
     end
   end
 end
