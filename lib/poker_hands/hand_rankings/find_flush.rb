@@ -7,7 +7,7 @@ module PokerHands
         return nil
       end
       
-      Entities::Flush.new(flush: hand)
+      Entities::Flush.new(cards: hand)
     end
   end
 end
