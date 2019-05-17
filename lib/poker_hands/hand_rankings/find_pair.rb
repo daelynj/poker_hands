@@ -17,7 +17,7 @@ module PokerHands
       pair = hand.select { |card| card.rank == pair_rank }
       other_cards = hand.select { |card| card.rank != pair_rank }
 
-      Entities::Pair.new(pair: pair, other_cards: other_cards)
+      Entities::Pair.new(cards: hand, pair: pair, other_cards: other_cards)
     end
   end
 end
