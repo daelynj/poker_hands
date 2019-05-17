@@ -1,4 +1,4 @@
-require_relative 'hand_entities/flush'
+require 'poker_hands/hand_rankings/hand_entities/flush'
 
 module PokerHands
   class FindFlush

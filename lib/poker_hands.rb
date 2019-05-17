@@ -1,5 +1,4 @@
-require_relative 'poker_hands/version'
-require_relative 'poker_hands/game'
+require 'poker_hands/game'
 
 module PokerHands
   class << self

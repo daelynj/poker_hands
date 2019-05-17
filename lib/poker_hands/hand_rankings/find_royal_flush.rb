@@ -1,5 +1,5 @@
-require_relative 'hand_entities/royal_flush'
-require_relative 'find_flush'
+require 'poker_hands/hand_rankings/hand_entities/royal_flush'
+require 'poker_hands/hand_rankings/find_flush'
 
 module PokerHands
   class FindRoyalFlush

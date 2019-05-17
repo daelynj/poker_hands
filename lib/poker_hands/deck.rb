@@ -1,4 +1,4 @@
-require_relative 'card'
+require 'poker_hands/card'
 
 module PokerHands
   class Deck

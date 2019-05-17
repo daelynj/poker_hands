@@ -1,4 +1,4 @@
-require_relative 'hand_entities/four_of_a_kind'
+require 'poker_hands/hand_rankings/hand_entities/four_of_a_kind'
 
 module PokerHands
   class FindFourOfAKind
