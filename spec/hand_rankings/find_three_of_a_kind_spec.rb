@@ -1,6 +1,7 @@
-require_relative '../../lib/poker_hands/hand_rankings/find_three_of_a_kind'
-require_relative '../../lib/poker_hands/card'
-require 'pry'
+require 'poker_hands/hand_rankings/find_three_of_a_kind'
+require 'poker_hands/card'
+require 'spec_helper'
+
 
 RSpec.describe PokerHands::FindThreeOfAKind do
   describe '#call' do

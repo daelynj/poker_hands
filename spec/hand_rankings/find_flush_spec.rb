@@ -1,6 +1,7 @@
-require_relative '../../lib/poker_hands/hand_rankings/find_flush'
-require_relative '../../lib/poker_hands/card'
-require 'pry'
+require 'poker_hands/hand_rankings/find_flush'
+require 'poker_hands/card'
+require 'spec_helper'
+
 
 RSpec.describe PokerHands::FindFlush do
   describe '#call' do
