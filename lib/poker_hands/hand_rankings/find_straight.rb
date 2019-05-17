@@ -9,7 +9,7 @@ module PokerHands
         return nil
       end
       
-      Entities::Straight.new(straight: hand)
+      Entities::Straight.new(cards: hand)
     end
   end
 end
