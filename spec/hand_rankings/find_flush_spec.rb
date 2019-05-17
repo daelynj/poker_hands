@@ -20,7 +20,7 @@ RSpec.describe PokerHands::FindFlush do
       it { is_expected.to be_an_instance_of(PokerHands::Entities::Flush) }
 
       it 'returns the expected cards in the flush' do
-        expect(subject.flush).to be(hand)
+        expect(subject.cards).to be(hand)
       end
     end
     
