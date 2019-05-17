@@ -14,7 +14,7 @@ module PokerHands
       set = hand.select { |card| card.rank == set_rank }
       other_cards = hand.select { |card| card.rank != set_rank }
       
-      Entities::ThreeOfAKind.new(set: set, other_cards: other_cards)
+      Entities::ThreeOfAKind.new(cards: hand, set: set, other_cards: other_cards)
     end
   end
 end
