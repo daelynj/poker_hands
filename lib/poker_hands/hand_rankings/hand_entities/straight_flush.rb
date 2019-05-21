@@ -6,13 +6,16 @@ module PokerHands
 
       def initialize(cards:)
         @type = 'straight flush'
-        @cards = cards.map(&:rank).reverse
+        @cards = cards
         @strength = 9
       end
 
       def <=>(other_hand)
-        if (@straight <=> other_hand.straight) != 0
-          return @straight <=> other_hand.straight
+        straight = @cards.map(&:rank).reverse
+        other_hand_straight = straight.map(&:rank).reverse
+        
+        if (straight <=> other_hand_straight) != 0
+          return straight <=> other_hand_straight
         else
           return 'tie'
         end
