@@ -4,7 +4,7 @@ require 'poker_hands/hand_rankings/find_flush'
 module PokerHands
   class FindRoyalFlush
     def call(hand)
-      royal_flush_ranks = ['10', '11', '12', '13', '14']
+      royal_flush_ranks = [10, 11, 12, 13, 14]
       
       if FindFlush.new.call(hand).nil?
         return nil
