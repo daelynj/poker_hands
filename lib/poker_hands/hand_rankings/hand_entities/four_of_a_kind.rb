@@ -2,20 +2,27 @@ module PokerHands
   module Entities
     class FourOfAKind
       include Comparable
-      attr_reader :quads, :other_card, :strength, :type
+      attr_reader :cards, :quads, :other_card, :strength, :type
 
-      def initialize(quads:, other_card:)
+      def initialize(cards:, quads:, other_card:)
         @type = 'four of a kind'
-        @quads = quads.map(&:rank).uniq
-        @other_card = other_card.map(&:rank)
+        @cards = cards
+        @quads = quads
+        @other_card = other_card
         @strength = 8
       end
 
       def <=>(other_hand)
-        if (@quads <=> other_hand.quads) != 0
-          return @quads <=> other_hand.quads
-        elsif (@other_card <=> other_hand.other_card) != 0
-          return @other_card <=> other_hand.other_card
+        quads = @quads.map(&:rank).uniq
+        other_card = @other_card.map(&:rank)
+
+        other_hand_quads = other_hand.quads.map(&:rank).uniq
+        other_hand_card = other_hand.other_card.map(&:rank)
+
+        if (quads <=> other_hand_quads) != 0
+          return quads <=> other_hand_quads
+        elsif (other_card <=> other_hand_card) != 0
+          return other_card <=> other_hand_card
         else
           return 'tie'
         end

@@ -16,7 +16,7 @@ module PokerHands
       quads = hand.select { |card| card.rank == quads_rank }
       other_card = hand.select { |card| card.rank != quads_rank }
 
-      Entities::FourOfAKind.new(quads: quads, other_card: other_card)
+      Entities::FourOfAKind.new(cards: hand, quads: quads, other_card: other_card)
     end
   end
 end
