@@ -17,7 +17,7 @@ module PokerHands
       set = hand.select { |card| card.rank == set_rank }
       pair = hand.select { |card| card.rank != set_rank }
       
-      Entities::FullHouse.new(set: set, pair: pair)
+      Entities::FullHouse.new(cards: hand, set: set, pair: pair)
     end
   end
 end
