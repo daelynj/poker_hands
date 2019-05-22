@@ -30,7 +30,7 @@ RSpec.describe PokerHands::Entities::HighCard do
   end
 
   describe '#<=>' do
-    context 'hand 1 is the winning hand' do
+    context 'hand 1 wins with the highest card' do
       let(:high_card_1) do
         [
           PokerHands::Card.new(4, 'H'),
@@ -57,7 +57,7 @@ RSpec.describe PokerHands::Entities::HighCard do
       end
     end
 
-    context 'hand 2 is the winning hand' do
+    context 'hand 2 wins with the highest card' do
       let(:high_card_1) do
         [
           PokerHands::Card.new(4, 'H'),
@@ -65,6 +65,60 @@ RSpec.describe PokerHands::Entities::HighCard do
           PokerHands::Card.new(8, 'D'),
           PokerHands::Card.new(2, 'S'),
           PokerHands::Card.new(9, 'C')
+        ]
+      end
+      let(:high_card_2) do
+        [
+          PokerHands::Card.new(4, 'C'),
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(8, 'C'),
+          PokerHands::Card.new(2, 'D'),
+          PokerHands::Card.new(9, 'H')
+        ]
+      end
+      let(:hand_1) { PokerHands::Entities::HighCard.new(cards: high_card_1) }
+      let(:hand_2) { PokerHands::Entities::HighCard.new(cards: high_card_2) }
+
+      it 'returns hand 2 as the winner' do
+        expect(hand_1 <=> hand_2).to be -1
+      end
+    end
+
+    context 'same high card but hand 1 wins with the second best' do
+      let(:high_card_1) do
+        [
+          PokerHands::Card.new(4, 'H'),
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(8, 'D'),
+          PokerHands::Card.new(2, 'S'),
+          PokerHands::Card.new(9, 'C')
+        ]
+      end
+      let(:high_card_2) do
+        [
+          PokerHands::Card.new(4, 'C'),
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(8, 'C'),
+          PokerHands::Card.new(2, 'D'),
+          PokerHands::Card.new(7, 'H')
+        ]
+      end
+      let(:hand_1) { PokerHands::Entities::HighCard.new(cards: high_card_1) }
+      let(:hand_2) { PokerHands::Entities::HighCard.new(cards: high_card_2) }
+
+      it 'returns hand 1 as the winner' do
+        expect(hand_1 <=> hand_2).to be 1
+      end
+    end
+
+    context 'same high card but hand 2 wins with the second best' do
+      let(:high_card_1) do
+        [
+          PokerHands::Card.new(4, 'H'),
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(8, 'D'),
+          PokerHands::Card.new(2, 'S'),
+          PokerHands::Card.new(7, 'C')
         ]
       end
       let(:high_card_2) do
