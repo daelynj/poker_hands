@@ -14,18 +14,9 @@ module PokerHands
       
       def <=>(other_hand)
         set = @set.map(&:rank)
-        pair = @pair.map(&:rank)
-
         other_hand_set = other_hand.set.map(&:rank)
-        other_hand_pair = other_hand.pair.map(&:rank)
 
-        if (set <=> other_hand_set) != 0
-          return set <=> other_hand_set
-        elsif (pair <=> other_hand_pair) != 0
-          return pair <=> other_hand_pair
-        else
-          return 'tie'
-        end
+        set <=> other_hand_set
       end
     end
   end
