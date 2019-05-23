@@ -3,31 +3,28 @@ require 'poker_hands/classify_hand'
 module PokerHands
   class CompareHands
     def call(hand1, hand2)
-      @hand1 = hand1
-      @hand2 = hand2
+      @hand1 = ClassifyHand.new.call(hand1)
+      @hand2 = ClassifyHand.new.call(hand2)
 
-      hand1 = ClassifyHand.new.call(@hand1)
-      hand2 = ClassifyHand.new.call(@hand2)
-
-      @hand_types = "Hand 1 is a #{hand1.type}. Hand 2 is a #{hand2.type}."
+      @hand_types = "Hand 1 is a #{@hand1.type}. Hand 2 is a #{@hand2.type}."
       
-      determine_winner(hand1, hand2)
+      determine_winner()
     end
 
-    def determine_winner(hand1, hand2)
-      if hand1.strength > hand2.strength
+    def determine_winner
+      if @hand1.strength > @hand2.strength
         return "#{@hand_types} Hand 1 wins"
-      elsif hand1.strength < hand2.strength
+      elsif @hand1.strength < @hand2.strength
         return "#{@hand_types} Hand 2 wins"
       else
-        return tie(hand1, hand2)
+        return tie()
       end
     end
 
-    def tie(hand1, hand2)
-      if (hand1 <=> hand2) == 1
+    def tie
+      if (@hand1 <=> @hand2) == 1
         return "#{@hand_types} Hand 1 wins"
-      elsif (hand1 <=> hand2) == -1
+      elsif (@hand1 <=> @hand2) == -1
         return "#{@hand_types} Hand 2 wins"
       else
         return "#{@hand_types} Tie"
