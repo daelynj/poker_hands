@@ -1,18 +1,11 @@
-require 'poker_hands/card'
+require 'poker_hands/build_cards'
 
 module PokerHands
   class Deck
-    def initialize
-      @ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-      @suits = ['C', 'H', 'S', 'D']
-      @cards = []
+    attr_reader :cards
 
-      @ranks.each do |rank|
-        @suits.each do |suit|
-          @cards << Card.new(rank, suit)
-        end
-      end
-      @cards.shuffle!
+    def initialize
+      @cards = BuildCards.new.call()
     end
 
     def draw(card_count)
