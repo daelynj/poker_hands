@@ -24,7 +24,7 @@ RSpec.describe PokerHands::CompareHands do
       ]
     end
     it 'returns the correct winning statement' do
-      expect(subject).to eq('Hand 1 is a three of a kind. Hand 2 is a pair. Hand 1 wins')
+      expect(subject).to eq('Hand 1 is a three of a kind. Hand 2 is a pair. Hand 1 wins.')
     end
   end
 
@@ -48,7 +48,7 @@ RSpec.describe PokerHands::CompareHands do
       ]
     end
     it 'returns the correct winning statement' do
-      expect(subject).to eq('Hand 1 is a two pair. Hand 2 is a four of a kind. Hand 2 wins')
+      expect(subject).to eq('Hand 1 is a two pair. Hand 2 is a four of a kind. Hand 2 wins.')
     end
   end
 
@@ -72,7 +72,7 @@ RSpec.describe PokerHands::CompareHands do
       ]
     end
     it 'returns the correct winning statement' do
-      expect(subject).to eq('Hand 1 is a straight. Hand 2 is a straight. Hand 1 wins')
+      expect(subject).to eq('Hand 1 is a straight. Hand 2 is a straight. Hand 1 wins.')
     end
   end
 
@@ -96,7 +96,7 @@ RSpec.describe PokerHands::CompareHands do
       ]
     end
     it 'returns the correct winning statement' do
-      expect(subject).to eq('Hand 1 is a straight. Hand 2 is a straight. Hand 2 wins')
+      expect(subject).to eq('Hand 1 is a straight. Hand 2 is a straight. Hand 2 wins.')
     end
   end
 
@@ -120,7 +120,7 @@ RSpec.describe PokerHands::CompareHands do
       ]
     end
     it 'returns the correct winning statement' do
-      expect(subject).to eq('Hand 1 is a straight. Hand 2 is a straight. Tie')
+      expect(subject).to eq('Hand 1 is a straight. Hand 2 is a straight. Tie.')
     end
   end
 end
