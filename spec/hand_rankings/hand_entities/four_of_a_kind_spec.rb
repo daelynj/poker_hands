@@ -151,5 +151,158 @@ RSpec.describe PokerHands::Entities::FourOfAKind do
         expect(hand_1 <=> hand_2).to be -1
       end
     end
+
+    context 'hand 1 wins with better other card' do
+      let(:quads_cards_1) do
+        [
+          PokerHands::Card.new(11, 'D'), 
+          PokerHands::Card.new(11, 'H'),
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(11, 'C')
+        ]
+      end
+      let(:other_card_1) do
+        [
+          PokerHands::Card.new(9, 'H')
+        ]
+      end
+      let(:four_of_a_kind_hand_1) { quads_cards_1 + other_card_1 }
+
+      let(:quads_cards_2) do
+        [
+          PokerHands::Card.new(11, 'H'), 
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(11, 'H'),
+          PokerHands::Card.new(11, 'C')
+        ]
+      end
+      let(:other_card_2) do
+        [
+          PokerHands::Card.new(2, 'H')
+        ]
+      end
+      let(:four_of_a_kind_hand_2) { quads_cards_2 + other_card_2 }
+
+      let(:hand_1) do 
+        PokerHands::Entities::FourOfAKind.new(
+          cards: four_of_a_kind_hand_1, 
+          quads: quads_cards_1, 
+          other_card: other_card_1
+        )
+      end
+      let(:hand_2) do
+        PokerHands::Entities::FourOfAKind.new(
+          cards: four_of_a_kind_hand_2,
+          quads: quads_cards_2,
+          other_card: other_card_2
+        )
+      end
+
+      it 'returns hand 1 as the winner' do
+        expect(hand_1 <=> hand_2).to be 1
+      end
+    end
+
+    context 'hand 2 wins with better other card' do
+      let(:quads_cards_1) do
+        [
+          PokerHands::Card.new(11, 'D'), 
+          PokerHands::Card.new(11, 'H'),
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(11, 'C')
+        ]
+      end
+      let(:other_card_1) do
+        [
+          PokerHands::Card.new(2, 'H')
+        ]
+      end
+      let(:four_of_a_kind_hand_1) { quads_cards_1 + other_card_1 }
+
+      let(:quads_cards_2) do
+        [
+          PokerHands::Card.new(11, 'H'), 
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(11, 'H'),
+          PokerHands::Card.new(11, 'C')
+        ]
+      end
+      let(:other_card_2) do
+        [
+          PokerHands::Card.new(9, 'H')
+        ]
+      end
+      let(:four_of_a_kind_hand_2) { quads_cards_2 + other_card_2 }
+
+      let(:hand_1) do 
+        PokerHands::Entities::FourOfAKind.new(
+          cards: four_of_a_kind_hand_1, 
+          quads: quads_cards_1, 
+          other_card: other_card_1
+        )
+      end
+      let(:hand_2) do
+        PokerHands::Entities::FourOfAKind.new(
+          cards: four_of_a_kind_hand_2,
+          quads: quads_cards_2,
+          other_card: other_card_2
+        )
+      end
+
+      it 'returns hand 2 as the winner' do
+        expect(hand_1 <=> hand_2).to be -1
+      end
+    end
+
+    context 'the hands are a tie' do
+      let(:quads_cards_1) do
+        [
+          PokerHands::Card.new(11, 'D'), 
+          PokerHands::Card.new(11, 'H'),
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(11, 'C')
+        ]
+      end
+      let(:other_card_1) do
+        [
+          PokerHands::Card.new(9, 'H')
+        ]
+      end
+      let(:four_of_a_kind_hand_1) { quads_cards_1 + other_card_1 }
+
+      let(:quads_cards_2) do
+        [
+          PokerHands::Card.new(11, 'H'), 
+          PokerHands::Card.new(11, 'S'),
+          PokerHands::Card.new(11, 'H'),
+          PokerHands::Card.new(11, 'C')
+        ]
+      end
+      let(:other_card_2) do
+        [
+          PokerHands::Card.new(9, 'H')
+        ]
+      end
+      let(:four_of_a_kind_hand_2) { quads_cards_2 + other_card_2 }
+
+      let(:hand_1) do 
+        PokerHands::Entities::FourOfAKind.new(
+          cards: four_of_a_kind_hand_1, 
+          quads: quads_cards_1, 
+          other_card: other_card_1
+        )
+      end
+      let(:hand_2) do
+        PokerHands::Entities::FourOfAKind.new(
+          cards: four_of_a_kind_hand_2,
+          quads: quads_cards_2,
+          other_card: other_card_2
+        )
+      end
+
+      it 'returns a tie' do
+        expect(hand_1 <=> hand_2).to eq('tie')
+      end
+    end
   end
 end

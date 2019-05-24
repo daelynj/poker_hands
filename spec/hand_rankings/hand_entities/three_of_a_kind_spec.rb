@@ -151,5 +151,158 @@ RSpec.describe PokerHands::Entities::ThreeOfAKind do
         expect(hand_1 <=> hand_2).to be -1
       end
     end
+
+    context 'same set but hand 1 wins with a better pair' do
+      let(:set_cards_1) do
+        [
+          PokerHands::Card.new(10, 'D'),
+          PokerHands::Card.new(10, 'H'), 
+          PokerHands::Card.new(10, 'S')
+        ]
+      end
+      let(:other_cards_1) do
+        [
+          PokerHands::Card.new(5, 'H'),
+          PokerHands::Card.new(6, 'C')
+        ]
+      end
+      let(:set_hand_1) { set_cards_1 + other_cards_1 }
+
+      let(:set_cards_2) do
+        [
+          PokerHands::Card.new(10, 'D'),
+          PokerHands::Card.new(10, 'H'), 
+          PokerHands::Card.new(10, 'S')
+        ]
+      end
+      let(:other_cards_2) do
+        [
+          PokerHands::Card.new(3, 'H'),
+          PokerHands::Card.new(4, 'C')
+        ]
+      end
+      let(:set_hand_2) { set_cards_2 + other_cards_2 }
+
+      let(:hand_1) do 
+        PokerHands::Entities::ThreeOfAKind.new(
+          cards: set_hand_1, 
+          set: set_cards_1, 
+          other_cards: other_cards_1
+        )
+      end
+      let(:hand_2) do
+        PokerHands::Entities::ThreeOfAKind.new(
+          cards: set_hand_2,
+          set: set_cards_2,
+          other_cards: other_cards_2
+        )
+      end
+
+      it 'returns hand 1 as the winner' do
+        expect(hand_1 <=> hand_2).to be 1
+      end
+    end
+
+    context 'same set but hand 2 wins with a better pair' do
+      let(:set_cards_1) do
+        [
+          PokerHands::Card.new(10, 'D'),
+          PokerHands::Card.new(10, 'H'), 
+          PokerHands::Card.new(10, 'S')
+        ]
+      end
+      let(:other_cards_1) do
+        [
+          PokerHands::Card.new(5, 'H'),
+          PokerHands::Card.new(6, 'C')
+        ]
+      end
+      let(:set_hand_1) { set_cards_1 + other_cards_1 }
+
+      let(:set_cards_2) do
+        [
+          PokerHands::Card.new(10, 'D'),
+          PokerHands::Card.new(10, 'H'), 
+          PokerHands::Card.new(10, 'S')
+        ]
+      end
+      let(:other_cards_2) do
+        [
+          PokerHands::Card.new(8, 'H'),
+          PokerHands::Card.new(4, 'C')
+        ]
+      end
+      let(:set_hand_2) { set_cards_2 + other_cards_2 }
+
+      let(:hand_1) do 
+        PokerHands::Entities::ThreeOfAKind.new(
+          cards: set_hand_1, 
+          set: set_cards_1, 
+          other_cards: other_cards_1
+        )
+      end
+      let(:hand_2) do
+        PokerHands::Entities::ThreeOfAKind.new(
+          cards: set_hand_2,
+          set: set_cards_2,
+          other_cards: other_cards_2
+        )
+      end
+
+      it 'returns hand 2 as the winner' do
+        expect(hand_1 <=> hand_2).to be -1
+      end
+    end
+
+    context 'the hands are a tie' do
+      let(:set_cards_1) do
+        [
+          PokerHands::Card.new(10, 'D'),
+          PokerHands::Card.new(10, 'H'), 
+          PokerHands::Card.new(10, 'S')
+        ]
+      end
+      let(:other_cards_1) do
+        [
+          PokerHands::Card.new(5, 'H'),
+          PokerHands::Card.new(6, 'C')
+        ]
+      end
+      let(:set_hand_1) { set_cards_1 + other_cards_1 }
+
+      let(:set_cards_2) do
+        [
+          PokerHands::Card.new(10, 'D'),
+          PokerHands::Card.new(10, 'H'), 
+          PokerHands::Card.new(10, 'S')
+        ]
+      end
+      let(:other_cards_2) do
+        [
+          PokerHands::Card.new(5, 'H'),
+          PokerHands::Card.new(6, 'C')
+        ]
+      end
+      let(:set_hand_2) { set_cards_2 + other_cards_2 }
+
+      let(:hand_1) do 
+        PokerHands::Entities::ThreeOfAKind.new(
+          cards: set_hand_1, 
+          set: set_cards_1, 
+          other_cards: other_cards_1
+        )
+      end
+      let(:hand_2) do
+        PokerHands::Entities::ThreeOfAKind.new(
+          cards: set_hand_2,
+          set: set_cards_2,
+          other_cards: other_cards_2
+        )
+      end
+
+      it 'returns tie' do
+        expect(hand_1 <=> hand_2).to eq('tie')
+      end
+    end
   end
 end
